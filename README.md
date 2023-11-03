@@ -22,6 +22,7 @@ url = "https://eap.lib.ncku.edu.tw/NewArrivals/NewArrivals.php"
 driver.get(url)
 
 try:
+
     #使用顯式等待等待特定元素加載
     
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "css_td_2")))
