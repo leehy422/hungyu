@@ -18,13 +18,16 @@ driver = webdriver.Chrome()
 #載入網頁
 
 url = "https://eap.lib.ncku.edu.tw/NewArrivals/NewArrivals.php"
+
 driver.get(url)
 
 try:
     #使用顯式等待等待特定元素加載
+    
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "css_td_2")))
     
     #提取書名
+    
     book_elements = driver.find_elements(By.CLASS_NAME, "css_td_2")
     
     for element in book_elements:
